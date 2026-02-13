@@ -3,25 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pearson Agency Group - Quote Request</title>
+<title>Pearson Agency Group - Quote Sheet</title>
 <style>
   body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
-  .container { max-width: 900px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; }
+  .container { max-width: 1000px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; }
   h1, h2 { text-align: center; }
   .section { margin-bottom: 30px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 15px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 15px; }
   label { display: block; margin-bottom: 5px; font-weight: bold; }
   input, select { width: 100%; padding: 6px; border-radius: 4px; border: 1px solid #ccc; }
-  button { padding: 10px 15px; border: none; border-radius: 5px; background: #007BFF; color: #fff; cursor: pointer; }
+  button { padding: 10px 15px; border: none; border-radius: 5px; background: #007BFF; color: #fff; cursor: pointer; margin-top:10px; }
   button:hover { background: #0056b3; }
   .hidden { display: none; }
-  .vehicleBlock { border: 1px solid #ccc; padding: 10px; border-radius: 5px; margin-bottom: 10px; }
+  .vehicleBlock, .driverBlock { border: 1px solid #ccc; padding: 10px; border-radius: 5px; margin-bottom: 10px; }
 </style>
 </head>
 <body>
 <div class="container">
-<h1>Pearson Agency Group - Quote Request</h1>
+<h1>Pearson Agency Group - Quote Sheet</h1>
+<p><em>Rev Jan 2025</em></p>
 <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
 <!-- General Info -->
 <div class="section">
 <h2>General Information</h2>
@@ -29,16 +31,16 @@
 <div>
 <label>Type of Quote</label>
 <select id="quoteType" name="quoteType" onchange="toggleSections()">
-<option value="">Select</option>
-<option value="Auto">Auto</option>
-<option value="Home">Home</option>
-<option value="Renters">Renters</option>
-<option value="Condo">Condo</option>
-<option value="Umbrella">Umbrella</option>
+  <option value="">Select</option>
+  <option value="Auto">Auto</option>
+  <option value="Home">Home</option>
+  <option value="Renters">Renters</option>
+  <option value="Condo">Condo</option>
+  <option value="Umbrella">Umbrella</option>
 </select>
 </div>
-<div><label>Referred By</label> <input type="text" name="referredBy" /></div>
 <div><label>Date</label> <input type="date" name="date" /></div>
+<div><label>Referred By</label> <input type="text" name="referredBy" /></div>
 </div>
 </div>
 
@@ -46,28 +48,70 @@
 <div class="section">
 <h2>Client Information</h2>
 <div class="grid">
-<div><label>Full Name</label> <input type="text" name="fullName" /></div>
-<div><label>Date of Birth</label> <input type="date" name="dob" /></div>
-<div>
-<label>Gender</label>
-<select name="gender">
-<option>Male</option>
-<option>Female</option>
-<option>Non-Binary</option>
-<option>Prefer not to say</option>
+<div><label>Client Name</label> <input type="text" name="clientName" /></div>
+<div><label>Client Gender</label>
+<select name="clientGender">
+  <option>Male</option>
+  <option>Female</option>
+  <option>Non-Binary</option>
+  <option>Prefer not to say</option>
 </select>
 </div>
-<div>
-<label>Marital Status</label>
-<select name="maritalStatus">
-<option>Single</option>
-<option>Married</option>
-<option>Divorced</option>
-<option>Widowed</option>
+<div><label>Spouse Name</label> <input type="text" name="spouseName" /></div>
+<div><label>Spouse Gender</label>
+<select name="spouseGender">
+  <option>Male</option>
+  <option>Female</option>
+  <option>Non-Binary</option>
+  <option>Prefer not to say</option>
 </select>
 </div>
-<div><label>Phone</label> <input type="tel" name="phone" /></div>
-<div><label>Email</label> <input type="email" name="email" /></div>
+<div><label>Are Clients Married?</label>
+<select name="marriedStatus">
+  <option>Yes</option>
+  <option>No</option>
+</select>
+</div>
+<div><label>Relationship to Client</label> <input type="text" name="relationship" /></div>
+<div><label>Date of Birth (Client)</label> <input type="date" name="dobClient" /></div>
+<div><label>Date of Birth (Spouse)</label> <input type="date" name="dobSpouse" /></div>
+<div><label>Driver's License # and State (Client)</label> <input type="text" name="dlClient" /></div>
+<div><label>Driver's License # and State (Spouse)</label> <input type="text" name="dlSpouse" /></div>
+<div><label>Occupation (Client)</label> <input type="text" name="occupationClient" /></div>
+<div><label>Occupation (Spouse)</label> <input type="text" name="occupationSpouse" /></div>
+<div><label>Education Level (Client)</label>
+<select name="educationClient">
+  <option>High School</option>
+  <option>Associate</option>
+  <option>Bachelor</option>
+  <option>Master</option>
+  <option>Doctorate</option>
+</select>
+</div>
+<div><label>Education Level (Spouse)</label>
+<select name="educationSpouse">
+  <option>High School</option>
+  <option>Associate</option>
+  <option>Bachelor</option>
+  <option>Master</option>
+  <option>Doctorate</option>
+</select>
+</div>
+<div><label>Phone (Client)</label> <input type="tel" name="phoneClient" /></div>
+<div><label>Phone (Spouse)</label> <input type="tel" name="phoneSpouse" /></div>
+<div><label>Email (Client)</label> <input type="email" name="emailClient" /></div>
+<div><label>Email (Spouse)</label> <input type="email" name="emailSpouse" /></div>
+</div>
+</div>
+
+<!-- Addresses -->
+<div class="section">
+<h2>Address Information</h2>
+<div class="grid">
+<div><label>Risk Address</label> <input type="text" name="riskAddress" /></div>
+<div><label>Mailing Address</label> <input type="text" name="mailingAddress" /></div>
+<div><label>Years at Address</label> <input type="number" name="yearsAtAddress" min="0" /></div>
+<div><label>If Less Than 3 Years, Prior Address</label> <input type="text" name="priorAddress" /></div>
 </div>
 </div>
 
@@ -75,52 +119,47 @@
 <div id="autoSection" class="section hidden">
 <h2>Auto Information</h2>
 <div class="grid">
-<div><label>Current Carrier</label> <input type="text" name="autoCarrier" /></div>
-<div><label>Renewal Date</label> <input type="date" name="renewalDate" /></div>
-<div>
-<label>Bodily Injury Limits</label>
-<select name="bodilyInjuryLimits">
-<option>25/50</option>
-<option>50/100</option>
-<option>100/300</option>
-<option>250/500</option>
-</select>
+<div><label>Current Auto Carrier</label> <input type="text" name="autoCarrier" /></div>
+<div><label>Policy Renewal Date</label> <input type="date" name="autoRenewal" /></div>
+<div><label>Policy Premium</label> <input type="number" name="autoPremium" step="0.01" /></div>
+<div><label>Liability Coverage</label> <select name="liabilityCoverage">
+  <option>State Minimum</option>
+  <option>25/50</option>
+  <option>50/100</option>
+  <option>100/300</option>
+  <option>250/500</option>
+</select></div>
+<div><label>Bodily Injury</label> <input type="text" name="bodilyInjury" /></div>
+<div><label>Property Damage</label> <input type="text" name="propertyDamage" /></div>
+<div><label>Uninsured Motorist</label> <input type="text" name="uninsuredMotorist" /></div>
+<div><label>Deductible Preference</label> <select name="deductiblePref">
+  <option>250</option>
+  <option>500</option>
+  <option>1000</option>
+</select></div>
+<div><label>Comprehensive Deductible</label> <select name="compDeductible">
+  <option>250</option>
+  <option>500</option>
+  <option>1000</option>
+</select></div>
+<div><label>Collision Deductible</label> <select name="collisionDeductible">
+  <option>250</option>
+  <option>500</option>
+  <option>1000</option>
+</select></div>
 </div>
-<div>
-<label>Comprehensive Deductible</label>
-<select name="compDeductible">
-<option>250</option>
-<option>500</option>
-<option>1000</option>
-</select>
-</div>
-<div>
-<label>Collision Deductible</label>
-<select name="collisionDeductible">
-<option>250</option>
-<option>500</option>
-<option>1000</option>
-</select>
-</div>
-</div>
+
 <h3>Vehicles</h3>
 <div id="vehicleContainer">
 <div class="vehicleBlock grid">
 <div><label>Year</label> <input type="number" max="2026" min="1980" name="vehicleYear[]" /></div>
 <div><label>Make</label> <input type="text" name="vehicleMake[]" /></div>
 <div><label>Model</label> <input type="text" name="vehicleModel[]" /></div>
-<div><label>VIN</label> <input type="text" name="vehicleVIN[]" /></div>
-<div>
-<label>Ownership</label>
-<select name="vehicleOwnership[]">
-<option>Owned</option>
-<option>Financed</option>
-<option>Leased</option>
-</select>
+<div><label>VIN Number</label> <input type="text" name="vehicleVIN[]" /></div>
+<div><label>Length of Ownership</label> <input type="text" name="vehicleLength[]" /></div>
+<div><label>Lienholder/Financing</label> <input type="text" name="vehicleLien[]" /></div>
 </div>
 </div>
-</div>
-<br />
 <button type="button" onclick="addVehicle()">Add Another Vehicle</button>
 </div>
 
@@ -128,47 +167,58 @@
 <div id="homeSection" class="section hidden">
 <h2>Home Information</h2>
 <div class="grid">
-<div><label>Year Built</label> <input type="number" name="homeYearBuilt" /></div>
-<div><label>Square Feet</label> <input type="number" name="squareFeet" /></div>
-<div>
-<label>Construction Type</label>
-<select name="constructionType">
-<option>Frame</option>
-<option>Brick</option>
-<option>Stucco</option>
-<option>Masonry</option>
-</select>
-</div>
+<div><label>Current Home Carrier</label> <input type="text" name="homeCarrier" /></div>
+<div><label>Policy Renewal Date</label> <input type="date" name="homeRenewal" /></div>
+<div><label>Policy Premium</label> <input type="number" name="homePremium" step="0.01" /></div>
+<div><label>Construction Type</label> <select name="constructionType">
+  <option>Frame</option>
+  <option>Brick</option>
+  <option>Stucco</option>
+  <option>Masonry</option>
+</select></div>
+<div><label>Alarm System</label> <select name="alarmSystem">
+  <option>None</option>
+  <option>Local</option>
+  <option>Central Station</option>
+</select></div>
+<div><label>County</label> <input type="text" name="county" /></div>
+<div><label>Property Damage</label> <input type="text" name="homePropertyDamage" /></div>
+<div><label>Garage (Cars)</label> <input type="text" name="garageCars" /></div>
+<div><label>Number of Bedrooms</label> <input type="number" name="numBedrooms" min="0" /></div>
+<div><label>Number of Baths</label> <input type="number" name="numBaths" min="0" /></div>
+<div><label>Pool?</label> <select name="pool">
+  <option>No</option>
+  <option>Yes</option>
+</select></div>
+<div><label>Fireplace?</label> <select name="fireplace">
+  <option>No</option>
+  <option>Yes</option>
+</select></div>
 <div><label>Roof Year</label> <input type="number" name="roofYear" /></div>
-<div>
-<label>Garage</label>
-<select name="garage">
-<option>None</option>
-<option>1 Car</option>
-<option>2 Car</option>
-<option>3+ Car</option>
-</select>
-</div>
-<div>
-<label>Pool?</label>
-<select name="pool">
-<option>No</option>
-<option>Yes</option>
-</select>
-</div>
-<div>
-<label>Alarm System</label>
-<select name="alarmSystem">
-<option>None</option>
-<option>Local</option>
-<option>Central Station</option>
-</select>
-</div>
-<div><label>Mortgage Company</label> <input type="text" name="mortgageCompany" /></div>
-</div>
+<div><label>Square Feet</label> <input type="number" name="squareFeet" /></div>
+<div><label>Replacement Cost</label> <input type="number" name="replacementCost" step="0.01" /></div>
+<div><label>Wind Excluded?</label> <select name="windExcluded">
+  <option>No</option>
+  <option>Yes</option>
+</select></div>
+<div><label>Whole Home Generator?</label> <select name="generator">
+  <option>No</option>
+  <option>Yes</option>
+</select></div>
 </div>
 
-<br />
+<h3>Additional Drivers</h3>
+<div id="driverContainer">
+<div class="driverBlock grid">
+<div><label>Name</label> <input type="text" name="driverName[]" /></div>
+<div><label>Date of Birth</label> <input type="date" name="driverDOB[]" /></div>
+<div><label>Driver’s License # and State</label> <input type="text" name="driverDL[]" /></div>
+</div>
+</div>
+<button type="button" onclick="addDriver()">Add Another Driver</button>
+</div>
+
+<br>
 <button type="submit">Submit Quote Request</button>
 </form>
 </div>
@@ -183,6 +233,14 @@ function toggleSections() {
 // Add another vehicle
 function addVehicle() {
   const container = document.getElementById('vehicleContainer');
+  const newBlock = container.children[0].cloneNode(true);
+  newBlock.querySelectorAll('input').forEach(input => input.value = '');
+  container.appendChild(newBlock);
+}
+
+// Add another driver
+function addDriver() {
+  const container = document.getElementById('driverContainer');
   const newBlock = container.children[0].cloneNode(true);
   newBlock.querySelectorAll('input').forEach(input => input.value = '');
   container.appendChild(newBlock);
