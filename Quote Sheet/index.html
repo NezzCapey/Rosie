@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pearson Agency Group - Quote Sheet</title>
+<title>Pearson Agency Group - Full Quote Sheet</title>
 <style>
 body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
 .container { max-width: 1200px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; }
@@ -25,7 +25,7 @@ button:hover { background: #0056b3; }
 <p><em>Rev Jan 2025</em></p>
 <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
-<!-- General Info -->
+<!-- General Information -->
 <div class="section">
 <h2>General Information</h2>
 <div class="grid">
@@ -35,44 +35,28 @@ button:hover { background: #0056b3; }
 <option value="">Select</option>
 <option value="Auto">Auto</option>
 <option value="Home">Home</option>
+<option value="Auto+Home">Auto + Home</option>
 <option value="Renters">Renters</option>
 <option value="Condo">Condo</option>
 <option value="Umbrella">Umbrella</option>
 </select>
 </div>
 <div><label>Date</label><input type="date" name="date" /></div>
-<div><label>Referred By</label><input type="text" name="referredBy" /></div>
+<div style="grid-column: span 2;"><label>Referred By</label><input type="text" name="referredBy" /></div>
 </div>
 </div>
 
-<!-- Client Info -->
+<!-- Client Information -->
 <div class="section">
 <h2>Client Information</h2>
 <div class="grid">
 <div><label>Client Name</label><input type="text" name="clientName" /></div>
 <div><label>Client Gender</label>
-<select name="clientGender">
-<option>Male</option>
-<option>Female</option>
-<option>Non-Binary</option>
-<option>Prefer not to say</option>
-</select>
-</div>
+<select name="clientGender"><option>Male</option><option>Female</option><option>Non-Binary</option><option>Prefer not to say</option></select></div>
 <div><label>Spouse Name</label><input type="text" name="spouseName" /></div>
 <div><label>Spouse Gender</label>
-<select name="spouseGender">
-<option>Male</option>
-<option>Female</option>
-<option>Non-Binary</option>
-<option>Prefer not to say</option>
-</select>
-</div>
-<div><label>Are Clients Married?</label>
-<select name="marriedStatus">
-<option>Yes</option>
-<option>No</option>
-</select>
-</div>
+<select name="spouseGender"><option>Male</option><option>Female</option><option>Non-Binary</option><option>Prefer not to say</option></select></div>
+<div><label>Are Clients Married?</label><select name="marriedStatus"><option>Yes</option><option>No</option></select></div>
 <div><label>Relationship to Client</label><input type="text" name="relationship" /></div>
 <div><label>Date of Birth (Client)</label><input type="date" name="dobClient" /></div>
 <div><label>Date of Birth (Spouse)</label><input type="date" name="dobSpouse" /></div>
@@ -81,23 +65,9 @@ button:hover { background: #0056b3; }
 <div><label>Occupation (Client)</label><input type="text" name="occupationClient" /></div>
 <div><label>Occupation (Spouse)</label><input type="text" name="occupationSpouse" /></div>
 <div><label>Education Level (Client)</label>
-<select name="educationClient">
-<option>High School</option>
-<option>Associate</option>
-<option>Bachelor</option>
-<option>Master</option>
-<option>Doctorate</option>
-</select>
-</div>
+<select name="educationClient"><option>High School</option><option>Associate</option><option>Bachelor</option><option>Master</option><option>Doctorate</option></select></div>
 <div><label>Education Level (Spouse)</label>
-<select name="educationSpouse">
-<option>High School</option>
-<option>Associate</option>
-<option>Bachelor</option>
-<option>Master</option>
-<option>Doctorate</option>
-</select>
-</div>
+<select name="educationSpouse"><option>High School</option><option>Associate</option><option>Bachelor</option><option>Master</option><option>Doctorate</option></select></div>
 <div><label>Phone (Client)</label><input type="tel" name="phoneClient" /></div>
 <div><label>Phone (Spouse)</label><input type="tel" name="phoneSpouse" /></div>
 <div><label>Email (Client)</label><input type="email" name="emailClient" /></div>
@@ -112,7 +82,7 @@ button:hover { background: #0056b3; }
 <div><label>Risk Address</label><input type="text" name="riskAddress" /></div>
 <div><label>Mailing Address</label><input type="text" name="mailingAddress" /></div>
 <div><label>Years at Address</label><input type="number" name="yearsAtAddress" min="0" /></div>
-<div><label>Prior Address (if <3 years)</label><input type="text" name="priorAddress" /></div>
+<div><label>Prior Address (if &lt;3 years)</label><input type="text" name="priorAddress" /></div>
 </div>
 </div>
 
@@ -123,36 +93,13 @@ button:hover { background: #0056b3; }
 <div><label>Current Auto Carrier</label><input type="text" name="autoCarrier" /></div>
 <div><label>Policy Renewal Date</label><input type="date" name="autoRenewal" /></div>
 <div><label>Policy Premium</label><input type="number" name="autoPremium" step="0.01" /></div>
-<div><label>Liability Coverage</label>
-<select name="liabilityCoverage">
-<option>State Minimum</option>
-<option>25/50</option>
-<option>50/100</option>
-<option>100/300</option>
-<option>250/500</option>
-</select></div>
-<div><label>Bodily Injury</label><input type="text" name="bodilyInjury" /></div>
-<div><label>Property Damage</label><input type="text" name="propertyDamage" /></div>
+<div><label>Bodily Injury</label><select name="bodilyInjury"><option>25/50</option><option>50/100</option><option>100/300</option><option>250/500</option></select></div>
+<div><label>Property Damage</label><select name="propertyDamage"><option>State Minimum</option><option>50k</option><option>100k</option><option>250k</option></select></div>
 <div><label>Uninsured Motorist</label><input type="text" name="uninsuredMotorist" /></div>
-<div><label>Current Liability & Medical</label><input type="text" name="currentLiabilityMedical" /></div>
-<div><label>Deductible Preference</label>
-<select name="deductiblePref">
-<option>250</option>
-<option>500</option>
-<option>1000</option>
-</select></div>
-<div><label>Comprehensive Deductible</label>
-<select name="compDeductible">
-<option>250</option>
-<option>500</option>
-<option>1000</option>
-</select></div>
-<div><label>Collision Deductible</label>
-<select name="collisionDeductible">
-<option>250</option>
-<option>500</option>
-<option>1000</option>
-</select></div>
+<div><label>Liability Limit</label><input type="text" name="liabilityLimit" /></div>
+<div><label>Deductible Preference</label><select name="deductiblePref"><option>250</option><option>500</option><option>1000</option></select></div>
+<div><label>Comprehensive Deductible</label><select name="compDeductible"><option>250</option><option>500</option><option>1000</option></select></div>
+<div><label>Collision Deductible</label><select name="collisionDeductible"><option>250</option><option>500</option><option>1000</option></select></div>
 <div><label>Roadside</label><input type="text" name="roadside" /></div>
 <div><label>Rental Reimbursement</label><input type="text" name="rentalReimbursement" /></div>
 <div><label>Personal Injury Protection</label><input type="text" name="pip" /></div>
@@ -179,23 +126,12 @@ button:hover { background: #0056b3; }
 <div><label>Current Home Carrier</label><input type="text" name="homeCarrier" /></div>
 <div><label>Policy Renewal Date</label><input type="date" name="homeRenewal" /></div>
 <div><label>Policy Premium</label><input type="number" name="homePremium" step="0.01" /></div>
-<div><label>Construction Type</label>
-<select name="constructionType">
-<option>Frame</option>
-<option>Brick</option>
-<option>Stucco</option>
-<option>Masonry</option>
-</select></div>
-<div><label>Alarm System</label>
-<select name="alarmSystem">
-<option>None</option>
-<option>Local</option>
-<option>Central Station</option>
-</select></div>
+<div><label>Construction Type</label><select name="constructionType"><option>Frame</option><option>Brick</option><option>Stucco</option><option>Masonry</option></select></div>
+<div><label>Alarm System</label><select name="alarmSystem"><option>None</option><option>Local</option><option>Central Station</option></select></div>
 <div><label>County</label><input type="text" name="county" /></div>
 <div><label>County Appraisal Improvement</label><input type="text" name="countyAppraisal" /></div>
 <div><label>Property Damage</label><input type="text" name="homePropertyDamage" /></div>
-<div><label>Garage (Cars / Sq Ft)</label><input type="text" name="garageInfo" /></div>
+<div><label>Garage (Cars/Sq Ft)</label><input type="text" name="garageInfo" /></div>
 <div><label>Number of Bedrooms</label><input type="number" name="numBedrooms" /></div>
 <div><label>Number of Baths</label><input type="number" name="numBaths" /></div>
 <div><label>Stories</label><input type="number" name="numStories" /></div>
@@ -205,7 +141,7 @@ button:hover { background: #0056b3; }
 <div><label>Square Feet</label><input type="number" name="homeSquareFeet" /></div>
 <div><label>Replacement Cost</label><input type="number" name="replacementCost" step="0.01" /></div>
 <div><label>Solar Panels</label><select name="solarPanels"><option>No</option><option>Yes</option></select></div>
-<div><label>Trampoline / Shed</label><select name="trampolineShed"><option>No</option><option>Yes</option></select></div>
+<div><label>Trampoline/Shed</label><select name="trampolineShed"><option>No</option><option>Yes</option></select></div>
 <div><label>Whole Home Generator</label><select name="generator"><option>No</option><option>Yes</option></select></div>
 <div><label>Wind Excluded</label><select name="windExcluded"><option>No</option><option>Yes</option></select></div>
 <div><label>Flood Insurance</label><input type="text" name="floodInsurance" /></div>
@@ -230,21 +166,19 @@ button:hover { background: #0056b3; }
 <script>
 function toggleSections() {
   const type = document.getElementById('quoteType').value;
-  document.getElementById('autoSection').classList.toggle('hidden', type !== 'Auto');
-  document.getElementById('homeSection').classList.toggle('hidden', type !== 'Home');
+  document.getElementById('autoSection').classList.toggle('hidden', !type.includes('Auto'));
+  document.getElementById('homeSection').classList.toggle('hidden', !type.includes('Home'));
 }
-
 function addVehicle() {
   const container = document.getElementById('vehicleContainer');
   const newBlock = container.children[0].cloneNode(true);
-  newBlock.querySelectorAll('input').forEach(input => input.value = '');
+  newBlock.querySelectorAll('input').forEach(i=>i.value='');
   container.appendChild(newBlock);
 }
-
 function addDriver() {
   const container = document.getElementById('driverContainer');
   const newBlock = container.children[0].cloneNode(true);
-  newBlock.querySelectorAll('input').forEach(input => input.value = '');
+  newBlock.querySelectorAll('input').forEach(i=>i.value='');
   container.appendChild(newBlock);
 }
 </script>
