@@ -184,8 +184,28 @@ button:hover { background: #0056b3; }
 <div class="section">
 <h2>Home Information</h2>
 <div class="grid">
-<!-- Home fields remain unchanged -->
-...
+<div><label>Current Home Carrier</label><input type="text" name="homeCarrier" /></div>
+<div><label>Policy Renewal Date</label><input type="date" name="homeRenewal" /></div>
+<div><label>Policy Premium</label><input type="number" name="homePremium" step="0.01" /></div>
+<div><label>Construction Type</label><select name="constructionType"><option>Frame</option><option>Brick</option><option>Stucco</option><option>Masonry</option></select></div>
+<div><label>Alarm System</label><select name="alarmSystem"><option>None</option><option>Local</option><option>Central Station</option></select></div>
+<div><label>County</label><input type="text" name="county" /></div>
+<div><label>County Appraisal Improvement</label><input type="text" name="countyAppraisal" /></div>
+<div><label>Property Damage</label><input type="text" name="homePropertyDamage" /></div>
+<div><label>Garage (Cars/Sq Ft)</label><input type="text" name="garageInfo" /></div>
+<div><label>Number of Bedrooms</label><input type="number" name="numBedrooms" /></div>
+<div><label>Number of Baths</label><input type="number" name="numBaths" /></div>
+<div><label>Stories</label><input type="number" name="numStories" /></div>
+<div><label>Pool</label><select name="pool"><option>No</option><option>Yes</option></select></div>
+<div><label>Fireplace</label><select name="fireplace"><option>No</option><option>Yes</option></select></div>
+<div><label>Roof Year</label><input type="number" name="roofYear" /></div>
+<div><label>Square Feet</label><input type="number" name="homeSquareFeet" /></div>
+<div><label>Replacement Cost</label><input type="number" name="replacementCost" step="0.01" /></div>
+<div><label>Solar Panels</label><select name="solarPanels"><option>No</option><option>Yes</option></select></div>
+<div><label>Trampoline/Shed</label><select name="trampolineShed"><option>No</option><option>Yes</option></select></div>
+<div><label>Whole Home Generator</label><select name="generator"><option>No</option><option>Yes</option></select></div>
+<div><label>Wind Excluded</label><select name="windExcluded"><option>No</option><option>Yes</option></select></div>
+<div><label>Flood Insurance</label><input type="text" name="floodInsurance" /></div>
 </div>
 </div>
 
@@ -194,19 +214,3 @@ button:hover { background: #0056b3; }
 </form>
 </div>
 
-<script>
-function addVehicle() {
-  const container = document.getElementById('vehicleContainer');
-  const newBlock = container.children[0].cloneNode(true);
-  newBlock.querySelectorAll('input').forEach(i=>i.value='');
-  container.appendChild(newBlock);
-}
-function addDriver() {
-  const container = document.getElementById('driverContainer');
-  const newBlock = container.children[0].cloneNode(true);
-  newBlock.querySelectorAll('input').forEach(i=>i.value='');
-  container.appendChild(newBlock);
-}
-</script>
-</body>
-</html>
