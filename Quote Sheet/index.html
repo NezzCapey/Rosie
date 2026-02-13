@@ -15,7 +15,6 @@ input, select, textarea { width: 100%; padding: 6px; border-radius: 4px; border:
 textarea { resize: vertical; }
 button { padding: 10px 15px; border: none; border-radius: 5px; background: #007BFF; color: #fff; cursor: pointer; margin-top:10px; }
 button:hover { background: #0056b3; }
-.hidden { display: none; }
 .vehicleBlock, .driverBlock { border: 1px solid #ccc; padding: 10px; border-radius: 5px; margin-bottom: 10px; }
 </style>
 </head>
@@ -23,6 +22,7 @@ button:hover { background: #0056b3; }
 <div class="container">
 <h1>PEARSON AGENCY GROUP - QUOTE SHEET</h1>
 <p><em>Rev Jan 2025</em></p>
+
 <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
 <!-- General Information -->
@@ -31,14 +31,14 @@ button:hover { background: #0056b3; }
 <div class="grid">
 <div>
 <label>Type of Quote</label>
-<select id="quoteType" name="quoteType" onchange="toggleSections()">
-<option value="">Select</option>
-<option value="Auto">Auto</option>
-<option value="Home">Home</option>
-<option value="Auto+Home">Auto + Home</option>
-<option value="Renters">Renters</option>
-<option value="Condo">Condo</option>
-<option value="Umbrella">Umbrella</option>
+<select name="quoteType">
+  <option value="">Select</option>
+  <option value="Auto">Auto</option>
+  <option value="Home">Home</option>
+  <option value="Auto+Home">Auto + Home</option>
+  <option value="Renters">Renters</option>
+  <option value="Condo">Condo</option>
+  <option value="Umbrella">Umbrella</option>
 </select>
 </div>
 <div><label>Date</label><input type="date" name="date" /></div>
@@ -46,32 +46,40 @@ button:hover { background: #0056b3; }
 </div>
 </div>
 
-<!-- Client Information -->
+<!-- Client Section -->
 <div class="section">
 <h2>Client Information</h2>
 <div class="grid">
 <div><label>Client Name</label><input type="text" name="clientName" /></div>
 <div><label>Client Gender</label>
 <select name="clientGender"><option>Male</option><option>Female</option><option>Non-Binary</option><option>Prefer not to say</option></select></div>
+<div><label>Date of Birth</label><input type="date" name="clientDOB" /></div>
+<div><label>Driver’s License # & State</label><input type="text" name="clientDL" /></div>
+<div><label>Occupation</label><input type="text" name="clientOccupation" /></div>
+<div><label>Education Level</label>
+<select name="clientEducation"><option>High School</option><option>Associate</option><option>Bachelor</option><option>Master</option><option>Doctorate</option></select></div>
+<div><label>Phone</label><input type="tel" name="clientPhone" /></div>
+<div><label>Email</label><input type="email" name="clientEmail" /></div>
+</div>
+</div>
+
+<!-- Spouse Section -->
+<div class="section">
+<h2>Spouse Information</h2>
+<div class="grid">
 <div><label>Spouse Name</label><input type="text" name="spouseName" /></div>
 <div><label>Spouse Gender</label>
 <select name="spouseGender"><option>Male</option><option>Female</option><option>Non-Binary</option><option>Prefer not to say</option></select></div>
-<div><label>Are Clients Married?</label><select name="marriedStatus"><option>Yes</option><option>No</option></select></div>
+<div><label>Date of Birth</label><input type="date" name="spouseDOB" /></div>
+<div><label>Driver’s License # & State</label><input type="text" name="spouseDL" /></div>
+<div><label>Occupation</label><input type="text" name="spouseOccupation" /></div>
+<div><label>Education Level</label>
+<select name="spouseEducation"><option>High School</option><option>Associate</option><option>Bachelor</option><option>Master</option><option>Doctorate</option></select></div>
+<div><label>Phone</label><input type="tel" name="spousePhone" /></div>
+<div><label>Email</label><input type="email" name="spouseEmail" /></div>
+<div><label>Are clients married?</label>
+<select name="marriedStatus"><option>Yes</option><option>No</option></select></div>
 <div><label>Relationship to Client</label><input type="text" name="relationship" /></div>
-<div><label>Date of Birth (Client)</label><input type="date" name="dobClient" /></div>
-<div><label>Date of Birth (Spouse)</label><input type="date" name="dobSpouse" /></div>
-<div><label>Driver’s License # & State (Client)</label><input type="text" name="dlClient" /></div>
-<div><label>Driver’s License # & State (Spouse)</label><input type="text" name="dlSpouse" /></div>
-<div><label>Occupation (Client)</label><input type="text" name="occupationClient" /></div>
-<div><label>Occupation (Spouse)</label><input type="text" name="occupationSpouse" /></div>
-<div><label>Education Level (Client)</label>
-<select name="educationClient"><option>High School</option><option>Associate</option><option>Bachelor</option><option>Master</option><option>Doctorate</option></select></div>
-<div><label>Education Level (Spouse)</label>
-<select name="educationSpouse"><option>High School</option><option>Associate</option><option>Bachelor</option><option>Master</option><option>Doctorate</option></select></div>
-<div><label>Phone (Client)</label><input type="tel" name="phoneClient" /></div>
-<div><label>Phone (Spouse)</label><input type="tel" name="phoneSpouse" /></div>
-<div><label>Email (Client)</label><input type="email" name="emailClient" /></div>
-<div><label>Email (Spouse)</label><input type="email" name="emailSpouse" /></div>
 </div>
 </div>
 
@@ -86,8 +94,8 @@ button:hover { background: #0056b3; }
 </div>
 </div>
 
-<!-- AUTO SECTION -->
-<div id="autoSection" class="section hidden">
+<!-- Auto Section -->
+<div class="section">
 <h2>Auto Information</h2>
 <div class="grid">
 <div><label>Current Auto Carrier</label><input type="text" name="autoCarrier" /></div>
@@ -119,8 +127,8 @@ button:hover { background: #0056b3; }
 <button type="button" onclick="addVehicle()">Add Another Vehicle</button>
 </div>
 
-<!-- HOME SECTION -->
-<div id="homeSection" class="section hidden">
+<!-- Home Section -->
+<div class="section">
 <h2>Home Information</h2>
 <div class="grid">
 <div><label>Current Home Carrier</label><input type="text" name="homeCarrier" /></div>
@@ -164,11 +172,6 @@ button:hover { background: #0056b3; }
 </div>
 
 <script>
-function toggleSections() {
-  const type = document.getElementById('quoteType').value;
-  document.getElementById('autoSection').classList.toggle('hidden', !type.includes('Auto'));
-  document.getElementById('homeSection').classList.toggle('hidden', !type.includes('Home'));
-}
 function addVehicle() {
   const container = document.getElementById('vehicleContainer');
   const newBlock = container.children[0].cloneNode(true);
