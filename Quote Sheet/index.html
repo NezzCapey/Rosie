@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pearson Agency Group - Quote Request</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+  .container { max-width: 900px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; }
+  h1, h2 { text-align: center; }
+  .section { margin-bottom: 30px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 15px; }
+  label { display: block; margin-bottom: 5px; font-weight: bold; }
+  input, select { width: 100%; padding: 6px; border-radius: 4px; border: 1px solid #ccc; }
+  button { padding: 10px 15px; border: none; border-radius: 5px; background: #007BFF; color: #fff; cursor: pointer; }
+  button:hover { background: #0056b3; }
+  .hidden { display: none; }
+  .vehicleBlock { border: 1px solid #ccc; padding: 10px; border-radius: 5px; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Pearson Agency Group - Quote Request</h1>
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<!-- General Info -->
+<div class="section">
+<h2>General Information</h2>
+<div class="grid">
+<div>
+<label>Type of Quote</label>
+<select id="quoteType" name="quoteType" onchange="toggleSections()">
+<option value="">Select</option>
+<option value="Auto">Auto</option>
+<option value="Home">Home</option>
+<option value="Renters">Renters</option>
+<option value="Condo">Condo</option>
+<option value="Umbrella">Umbrella</option>
+</select>
+</div>
+<div><label>Referred By</label> <input type="text" name="referredBy" /></div>
+<div><label>Date</label> <input type="date" name="date" /></div>
+</div>
+</div>
+
+<!-- Client Info -->
+<div class="section">
+<h2>Client Information</h2>
+<div class="grid">
+<div><label>Full Name</label> <input type="text" name="fullName" /></div>
+<div><label>Date of Birth</label> <input type="date" name="dob" /></div>
+<div>
+<label>Gender</label>
+<select name="gender">
+<option>Male</option>
+<option>Female</option>
+<option>Non-Binary</option>
+<option>Prefer not to say</option>
+</select>
+</div>
+<div>
+<label>Marital Status</label>
+<select name="maritalStatus">
+<option>Single</option>
+<option>Married</option>
+<option>Divorced</option>
+<option>Widowed</option>
+</select>
+</div>
+<div><label>Phone</label> <input type="tel" name="phone" /></div>
+<div><label>Email</label> <input type="email" name="email" /></div>
+</div>
+</div>
+
+<!-- AUTO SECTION -->
+<div id="autoSection" class="section hidden">
+<h2>Auto Information</h2>
+<div class="grid">
+<div><label>Current Carrier</label> <input type="text" name="autoCarrier" /></div>
+<div><label>Renewal Date</label> <input type="date" name="renewalDate" /></div>
+<div>
+<label>Bodily Injury Limits</label>
+<select name="bodilyInjuryLimits">
+<option>25/50</option>
+<option>50/100</option>
+<option>100/300</option>
+<option>250/500</option>
+</select>
+</div>
+<div>
+<label>Comprehensive Deductible</label>
+<select name="compDeductible">
+<option>250</option>
+<option>500</option>
+<option>1000</option>
+</select>
+</div>
+<div>
+<label>Collision Deductible</label>
+<select name="collisionDeductible">
+<option>250</option>
+<option>500</option>
+<option>1000</option>
+</select>
+</div>
+</div>
+<h3>Vehicles</h3>
+<div id="vehicleContainer">
+<div class="vehicleBlock grid">
+<div><label>Year</label> <input type="number" max="2026" min="1980" name="vehicleYear[]" /></div>
+<div><label>Make</label> <input type="text" name="vehicleMake[]" /></div>
+<div><label>Model</label> <input type="text" name="vehicleModel[]" /></div>
+<div><label>VIN</label> <input type="text" name="vehicleVIN[]" /></div>
+<div>
+<label>Ownership</label>
+<select name="vehicleOwnership[]">
+<option>Owned</option>
+<option>Financed</option>
+<option>Leased</option>
+</select>
+</div>
+</div>
+</div>
+<br />
+<button type="button" onclick="addVehicle()">Add Another Vehicle</button>
+</div>
+
+<!-- HOME SECTION -->
+<div id="homeSection" class="section hidden">
+<h2>Home Information</h2>
+<div class="grid">
+<div><label>Year Built</label> <input type="number" name="homeYearBuilt" /></div>
+<div><label>Square Feet</label> <input type="number" name="squareFeet" /></div>
+<div>
+<label>Construction Type</label>
+<select name="constructionType">
+<option>Frame</option>
+<option>Brick</option>
+<option>Stucco</option>
+<option>Masonry</option>
+</select>
+</div>
+<div><label>Roof Year</label> <input type="number" name="roofYear" /></div>
+<div>
+<label>Garage</label>
+<select name="garage">
+<option>None</option>
+<option>1 Car</option>
+<option>2 Car</option>
+<option>3+ Car</option>
+</select>
+</div>
+<div>
+<label>Pool?</label>
+<select name="pool">
+<option>No</option>
+<option>Yes</option>
+</select>
+</div>
+<div>
+<label>Alarm System</label>
+<select name="alarmSystem">
+<option>None</option>
+<option>Local</option>
+<option>Central Station</option>
+</select>
+</div>
+<div><label>Mortgage Company</label> <input type="text" name="mortgageCompany" /></div>
+</div>
+</div>
+
+<br />
+<button type="submit">Submit Quote Request</button>
+</form>
+</div>
+
+<script>
+function toggleSections() {
+  const type = document.getElementById('quoteType').value;
+  document.getElementById('autoSection').classList.toggle('hidden', type !== 'Auto');
+  document.getElementById('homeSection').classList.toggle('hidden', type !== 'Home');
+}
+
+// Add another vehicle
+function addVehicle() {
+  const container = document.getElementById('vehicleContainer');
+  const newBlock = container.children[0].cloneNode(true);
+  newBlock.querySelectorAll('input').forEach(input => input.value = '');
+  container.appendChild(newBlock);
+}
+</script>
+</body>
+</html>
