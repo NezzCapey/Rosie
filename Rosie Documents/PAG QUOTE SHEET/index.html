@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pearson Agency Group Quote Sheet</title>
+
+<style>
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#eef2f7;
+    margin:0;
+    padding:20px;
+}
+.container{
+    max-width:1200px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+h1{
+    text-align:center;
+}
+h2{
+    background:#111827;
+    color:white;
+    padding:10px;
+    border-radius:6px;
+    margin-top:40px;
+}
+h3{
+    margin-top:25px;
+}
+.grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+.grid-3{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:15px;
+}
+label{
+    font-weight:600;
+    font-size:14px;
+}
+input, select{
+    width:100%;
+    padding:8px;
+    margin-top:4px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+.card{
+    background:#f9fafb;
+    padding:15px;
+    border-radius:8px;
+    margin-top:10px;
+}
+button{
+    padding:8px 15px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:10px;
+}
+button:hover{
+    background:#1d4ed8;
+}
+.submit-btn{
+    margin-top:40px;
+    width:100%;
+    padding:15px;
+    font-size:16px;
+    background:#111827;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>PEARSON AGENCY GROUP QUOTE SHEET</h1>
+<p style="text-align:center;">Rev Jan 2025</p>
+
+<!-- ================= QUOTE INFO ================= -->
+<h2>QUOTE INFORMATION</h2>
+<div class="grid-3">
+<div>
+<label>Type of Quote</label>
+<select>
+<option>Auto</option>
+<option>Home</option>
+<option>Home & Auto</option>
+<option>Renters</option>
+<option>Umbrella</option>
+</select>
+</div>
+
+<div>
+<label>Date</label>
+<input type="date">
+</div>
+
+<div>
+<label>Referred By</label>
+<input type="text">
+</div>
+</div>
+
+<!-- ================= CLIENT INFORMATION ================= -->
+<h2>CLIENT INFORMATION</h2>
+<div class="grid-3">
+<div>
+<label>First Name</label>
+<input type="text">
+</div>
+<div>
+<label>Last Name</label>
+<input type="text">
+</div>
+<div>
+<label>Gender</label>
+<select>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+</div>
+
+<div>
+<label>Date of Birth</label>
+<input type="date">
+</div>
+
+<div>
+<label>Marital Status</label>
+<select>
+<option>Single</option>
+<option>Married</option>
+<option>Divorced</option>
+<option>Widowed</option>
+</select>
+</div>
+
+<div>
+<label>Occupation</label>
+<input type="text">
+</div>
+
+<div>
+<label>Driver's License #</label>
+<input type="text">
+</div>
+
+<div>
+<label>License State</label>
+<input type="text">
+</div>
+
+<div>
+<label>Education Level</label>
+<select>
+<option>High School</option>
+<option>Associate</option>
+<option>Bachelor</option>
+<option>Master</option>
+<option>Doctorate</option>
+</select>
+</div>
+
+<div>
+<label>Phone</label>
+<input type="tel">
+</div>
+
+<div>
+<label>Email</label>
+<input type="email">
+</div>
+</div>
+
+<div class="grid-2">
+<div>
+<label>Risk Address</label>
+<input type="text" placeholder="Street">
+<input type="text" placeholder="City">
+<input type="text" placeholder="State">
+<input type="text" placeholder="Zip">
+</div>
+
+<div>
+<label>Mailing Address</label>
+<input type="text" placeholder="Street">
+<input type="text" placeholder="City">
+<input type="text" placeholder="State">
+<input type="text" placeholder="Zip">
+</div>
+</div>
+
+<!-- ================= SPOUSE ================= -->
+<h2>SPOUSE INFORMATION</h2>
+<div class="grid-3">
+<input type="text" placeholder="First Name">
+<input type="text" placeholder="Last Name">
+<input type="date">
+<input type="text" placeholder="License #">
+<input type="text" placeholder="State">
+<select>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+</div>
+
+<!-- ================= AUTO SECTION ================= -->
+<h2>AUTO SECTION</h2>
+
+<div class="grid-3">
+<input type="text" placeholder="Current Auto Carrier">
+<input type="date">
+<input type="number" placeholder="Policy Premium">
+</div>
+
+<h3>Liability Coverage</h3>
+<div class="grid-2">
+<div>
+<label>Bodily Injury</label>
+<select>
+<option>25/50</option>
+<option>50/100</option>
+<option>100/300</option>
+<option>250/500</option>
+<option>500/500</option>
+</select>
+</div>
+<div>
+<label>Property Damage</label>
+<select>
+<option>25,000</option>
+<option>50,000</option>
+<option>100,000</option>
+<option>300,000</option>
+<option>500,000</option>
+</select>
+</div>
+</div>
+
+<h3>Uninsured Motorist</h3>
+<div class="grid-2">
+<div>
+<label>Liability Limit</label>
+<select>
+<option>25/50</option>
+<option>50/100</option>
+<option>100/300</option>
+<option>250/500</option>
+</select>
+</div>
+<div>
+<label>Property Damage</label>
+<select>
+<option>25,000</option>
+<option>50,000</option>
+<option>100,000</option>
+<option>300,000</option>
+</select>
+</div>
+</div>
+
+<h3>Additional Coverages</h3>
+<div class="grid-3">
+<select>
+<option>Medical - None</option>
+<option>1,000</option>
+<option>5,000</option>
+<option>10,000</option>
+</select>
+
+<select>
+<option>Comprehensive - 250</option>
+<option>500</option>
+<option>1,000</option>
+</select>
+
+<select>
+<option>Collision - 250</option>
+<option>500</option>
+<option>1,000</option>
+</select>
+
+<select>
+<option>Roadside - No</option>
+<option>Yes</option>
+</select>
+
+<select>
+<option>Rental - No</option>
+<option>$30/day</option>
+<option>$40/day</option>
+</select>
+
+<select>
+<option>PIP - None</option>
+<option>2,500</option>
+<option>5,000</option>
+<option>10,000</option>
+</select>
+
+<select>
+<option>Payoff or Gap - No</option>
+<option>Yes</option>
+</select>
+</div>
+
+<h3>Additional Drivers</h3>
+<div id="drivers"></div>
+<button type="button" onclick="addDriver()">+ Add Driver</button>
+
+<h3>Vehicles</h3>
+<div id="vehicles"></div>
+<button type="button" onclick="addVehicle()">+ Add Vehicle</button>
+
+<!-- ================= HOME SECTION ================= -->
+<h2>HOME SECTION</h2>
+
+<div class="grid-3">
+<div>
+<label>Current Home Carrier</label>
+<input type="text">
+</div>
+
+<div>
+<label>Policy Renewal Date</label>
+<input type="date">
+</div>
+
+<div>
+<label>Policy Premium</label>
+<input type="number">
+</div>
+</div>
+
+<div class="grid-3">
+
+<div>
+<label>Alarm System</label>
+<select>
+<option>None</option>
+<option>Fire</option>
+<option>Burglar</option>
+<option>Central Station</option>
+<option>Smoke Detectors</option>
+</select>
+</div>
+
+<div>
+<label>Claims (Past 5 Years)</label>
+<select>
+<option>0</option>
+<option>1</option>
+<option>2</option>
+<option>3+</option>
+</select>
+</div>
+
+<div>
+<label>Construction Type</label>
+<select>
+<option>Frame</option>
+<option>Brick</option>
+<option>Stucco</option>
+<option>Masonry</option>
+<option>Concrete</option>
+</select>
+</div>
+
+<div>
+<label>County</label>
+<input type="text">
+</div>
+
+<div>
+<label>County Appraisal Improvement</label>
+<select>
+<option>No</option>
+<option>Yes</option>
+</select>
+</div>
+
+<div>
+<label>Current Liability & Medical</label>
+<select>
+<option>100,000</option>
+<option>300,000</option>
+<option>500,000</option>
+<option>1,000,000</option>
+</select>
+</div>
+
+<div>
+<label>Deductible Preference</label>
+<select>
+<option>500</option>
+<option>1,000</option>
+<option>2,500</option>
+<option>5,000</option>
+</select>
+</div>
+
+<div>
+<label>Dogs?</label>
+<select>
+<option>No</option>
+<option>Yes</option>
+</select>
+</div>
+
+<div>
+<label>Fireplace</label>
+<select>
+<option>No</option>
+<option>Wood Burning</option>
+<option>Gas</option>
+</select>
+</div>
+
+<div>
+<label>Flood Insurance</label>
+<select>
+<option>No</option>
+<option>Yes</option>
+</select>
+</div>
+
+<div>
+<label>Garage (Sq Ft / # Cars)</label>
+<select>
+<option>No Garage</option>
+<option>1 Car</option>
+<option>2 Car</option>
+<option>3 Car</option>
+<option>4+ Car</option>
+</select>
+</div>
+
+<div>
+<label>Mortgage / Escrow</label>
+<select>
+<option>No</option>
+<option>Yes</option>
+</select>
+</div>
+
+<div>
+<label>Number of Bathrooms</label>
+<select>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4+</option>
+</select>
+</div>
+
+<div>
+<label>Number of Bedrooms</label>
+<select>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5+</option>
+</select>
+</div>
+
+<div>
+<label>Number of Stories</label>
+<select>
+<option>1</option>
+<option>2</option>
+<option>3+</option>
+</select>
+</div>
+
+<div>
+<label>Pool or Other Updates</label>
+<select>
+<option>None</option>
+<option>Pool</option>
+<option>Pool (Fenced)</option>
+<option>Major Renovation</option>
+</select>
+</div>
+
+<div>
+<label>Protection Class</label>
+<select>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5+</option>
+</select>
+</div>
+
+<div>
+<label>Purchase / Closing Date</label>
+<input type="date">
+</div>
+
+<div>
+<label>Replacement Cost</label>
+<input type="number">
+</div>
+
+<div>
+<label>Roof Year / Update</label>
+<input type="number" placeholder="Year">
+</div>
+
+<div>
+<label>Solar Panels</label>
+<select>
+<option>No</option>
+<option>Owned</option>
+<option>Leased</option>
+</select>
+</div>
+
+<div>
+<label>Square Feet</label>
+<input type="number">
+</div>
+
+<div>
+<label>Trampoline or Shed</label>
+<select>
+<option>None</option>
+<option>Trampoline</option>
+<option>Shed</option>
+<option>Both</option>
+</select>
+</div>
+
+<div>
+<label>Whole Home Generator</label>
+<select>
+<option>No</option>
+<option>Yes</option>
+</select>
+</div>
+
+<div>
+<label>Wind Excluded</label>
+<select>
+<option>No</option>
+<option>Yes</option>
+</select>
+</div>
+
+<div>
+<label>WPI-8 Dates</label>
+<input type="date">
+</div>
+
+<div>
+<label>Year Built</label>
+<input type="number">
+</div>
+
+</div>
+
+<button class="submit-btn">Submit Quote</button>
+
+</div>
+
+<script>
+function addDriver(){
+const container=document.getElementById("drivers");
+const div=document.createElement("div");
+div.classList.add("card");
+div.innerHTML=`
+<div class="grid-2">
+<input type="text" placeholder="Driver Name(s)">
+<input type="date">
+<input type="text" placeholder="License #">
+<input type="text" placeholder="State">
+</div>`;
+container.appendChild(div);
+}
+
+function addVehicle(){
+const container=document.getElementById("vehicles");
+const div=document.createElement("div");
+div.classList.add("card");
+div.innerHTML=`
+<div class="grid-2">
+<input type="text" placeholder="Year, Make & Model">
+<input type="text" placeholder="VIN">
+<input type="number" placeholder="Length of Ownership">
+<select>
+<option>Owned</option>
+<option>Financed</option>
+<option>Leased</option>
+</select>
+</div>`;
+container.appendChild(div);
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
